@@ -10,6 +10,7 @@ import kotlinx.coroutines.SupervisorJob
 open class ViewModelBase(application: Application) : AndroidViewModel(application){
 
     protected var context: Application = application
+    // probably use either coroutine or rxjava - not sure it makes sense to use both of them
     protected val compositeDisposable: CompositeDisposable = CompositeDisposable()
     protected val viewModelJob = SupervisorJob()
     protected val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)

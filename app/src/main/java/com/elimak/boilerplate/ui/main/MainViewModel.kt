@@ -1,12 +1,13 @@
 package com.elimak.boilerplate.ui.main
 
+import android.app.Application
 import androidx.databinding.ObservableField
-import androidx.lifecycle.ViewModel
 import com.elimak.boilerplate.App
 import com.elimak.boilerplate.repository.IRepository
+import com.elimak.boilerplate.ui.base.ViewModelBase
 import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application: Application) : ViewModelBase(application) {
     @Inject
     lateinit var repository: IRepository
 
