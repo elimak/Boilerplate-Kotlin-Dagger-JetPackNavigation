@@ -6,7 +6,7 @@ import com.elimak.boilerplate.di.ApplicationModule
 import com.elimak.boilerplate.di.DaggerApplicationComponent
 
 class App: Application() {
-    lateinit var component: ApplicationComponent
+    private lateinit var instance: App
 
     override fun onCreate() {
         super.onCreate()
@@ -16,17 +16,13 @@ class App: Application() {
     }
 
     fun setup() {
-        component = DaggerApplicationComponent.builder()
+        injector = DaggerApplicationComponent.builder()
             .applicationModule(ApplicationModule(this))
             .build()
-        component.inject(this)
-    }
-
-    fun getApplicationComponent(): ApplicationComponent {
-        return component
+        injector.inject(this)
     }
 
     companion object {
-        lateinit var instance: App private set
+        lateinit var injector: ApplicationComponent private set
     }
 }

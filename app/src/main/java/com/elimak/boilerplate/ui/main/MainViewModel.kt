@@ -14,6 +14,6 @@ class MainViewModel(application: Application) : ViewModelBase(application) {
     val text: ObservableField<String> = ObservableField("Main Fragment Title")
 
     init {
-        App.instance.getApplicationComponent().inject(this)
+        App.injector.inject(this)
     }
 }
