@@ -9,7 +9,6 @@ import com.elimak.boilerplate.repository.Repository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
-import kotlin.coroutines.EmptyCoroutineContext
 
 @Module
 class ApplicationModule(private val baseApp: App) {
@@ -25,6 +24,6 @@ class ApplicationModule(private val baseApp: App) {
     @Provides
     @Singleton
     protected fun provideRepository(): IRepository {
-        return Repository(baseApp, EmptyCoroutineContext)
+        return Repository(baseApp)
     }
 }
