@@ -4,6 +4,7 @@ Basic setup to speed up new project creation
 
 Features:
 - Kotlin
-- DataBindings / Rxjava
+- DataBindings
+- Rxjava support
 - Coroutines support
 - Dagger 2 injection
